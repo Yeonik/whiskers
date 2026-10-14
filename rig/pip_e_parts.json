@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "status": "draft",
+  "note": "Pip mini-rig (request 087, D-055/D-056, look = chr_pip_a_concept). Format as usach_*_parts.json: pixel coords in each part PNG (origin top-left); 'joint' = point of the part that sits on its parent; 'attach' = where that joint lands, in the parent's PNG pixels. Facing right (e); facing left = mirror. Scale = chr_pip_a_concept source (170 px tall with eye stalks, ART_SCALE 0.5 in game, D-045: hero 208 px source). 'rest_deg' = rest rotation about the joint (clockwise, degrees); 'tint' = suggested multiplier for the far stalk (engine). Eye stalks are drawn behind the body: ~7 px below the joint is joint reserve hidden inside the head; the engine swings them with a spring. 'letter' is a separate prop held at the mouth; detach it to hand it to the hero. Body has no shell; the shell sits on the hump.",
+  "canvas": [
+    240,
+    210
+  ],
+  "root_at": [
+    104,
+    194
+  ],
+  "draw_order": [
+    "eyestalk_far",
+    "eyestalk_near",
+    "body",
+    "shell",
+    "cap",
+    "letter"
+  ],
+  "parts_dir": "assets/chr/rig/",
+  "parts": {
+    "body": {
+      "file": "chr_pip_body.png",
+      "parent": null,
+      "joint": [
+        98,
+        120
+      ],
+      "attach": null,
+      "note": "root: middle of the foot sole under the shell; neck rises at x>=135, head top ~(158,5), mouth ~(168,37)",
+      "size": [
+        196,
+        127
+      ],
+      "id": "chr_pip_body"
+    },
+    "shell": {
+      "file": "chr_pip_shell.png",
+      "parent": "body",
+      "joint": [
+        64,
+        108
+      ],
+      "attach": [
+        77,
+        99
+      ],
+      "note": "bottom of the shell whorl; covers the body hump, right edge stops at the neck (~x 137 on the body); satchel is painted on the shell",
+      "size": [
+        129,
+        116
+      ],
+      "id": "chr_pip_shell"
+    },
+    "eyestalk_near": {
+      "file": "chr_pip_eyestalk_near.png",
+      "parent": "body",
+      "joint": [
+        12,
+        73
+      ],
+      "attach": [
+        172,
+        12
+      ],
+      "rest_deg": 10,
+      "note": "front stalk; joint 8 px above the rounded base (reserve under the head); eye at the top (12,10)",
+      "size": [
+        24,
+        86
+      ],
+      "id": "chr_pip_eyestalk_near"
+    },
+    "eyestalk_far": {
+      "file": "chr_pip_eyestalk_far.png",
+      "parent": "body",
+      "joint": [
+        12,
+        73
+      ],
+      "attach": [
+        152,
+        14
+      ],
+      "rest_deg": -10,
+      "tint": 0.85,
+      "note": "back stalk; same drawing as near (like the hero legs), darkened by tint in engine",
+      "size": [
+        24,
+        86
+      ],
+      "id": "chr_pip_eyestalk_far"
+    },
+    "cap": {
+      "file": "chr_pip_cap.png",
+      "parent": "body",
+      "joint": [
+        28,
+        34
+      ],
+      "attach": [
+        158,
+        14
+      ],
+      "note": "underside centre of the crown on the head top, between the stalk bases; peak to the right",
+      "size": [
+        62,
+        43
+      ],
+      "id": "chr_pip_cap"
+    },
+    "letter": {
+      "file": "chr_pip_letter.png",
+      "parent": "body",
+      "joint": [
+        7,
+        17
+      ],
+      "attach": [
+        167,
+        37
+      ],
+      "note": "left corner of the envelope held in the mouth; separate so the engine can hand it to the hero",
+      "size": [
+        54,
+        44
+      ],
+      "id": "chr_pip_letter"
+    }
+  }
+}
